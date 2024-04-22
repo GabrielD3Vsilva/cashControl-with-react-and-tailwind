@@ -13,7 +13,7 @@ function App ( ) {
       <Header cash={cash}/>
       <GetCashForm setCash={setCash}/>
       <ExpensesForm expensesList={expensesList} setExpensesList={setExpensesList}/>
-      <ExpensesList expensesList={expensesList}/>
+      <ExpensesList expensesList={expensesList} setExpensesList={setExpensesList}/>
     </div>
   )
 }

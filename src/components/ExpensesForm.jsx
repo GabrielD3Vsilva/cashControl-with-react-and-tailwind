@@ -14,6 +14,7 @@ function ExpensesForm ({expensesList, setExpensesList}) {
 
     const addExpenseItem = ( ) => {
         const newExpense = {
+            id: Math.random()*10000,
             expenseName: expense,
             expenseValueObj: expenseValue
         }

@@ -1,13 +1,36 @@
-function ExpensesForm ( ) {
+import { useState } from "react";
+
+function ExpensesForm ({expensesList, setExpensesList}) {
+    const [expense, setExpense] = useState('');
+    const [expenseValue, setExpenseValue] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault( );
+        if(!expense || !expenseValue) return;
+
+        addExpenseItem( );
+        
+    }
+
+    const addExpenseItem = ( ) => {
+        const newExpense = {
+            expenseName: expense,
+            expenseValue: expenseValue
+        }
+
+        setExpensesList([...expensesList, newExpense]);
+        
+    }
+
     return (
         <>
             <section className="my-5 bg-blue-950 w-2/3 mx-auto p-2">
             <h2 className="text-center md:text-xl text-lg font-bold text-white">Adicione as suas despezas</h2>
                 <div className="flex justify-center mx-auto my-4">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="flex gap-2 flex-wrap font-bold">
-                            <input type="text" placeholder="Nome da despeza" />
-                            <input type="number" placeholder="Custo da despeza" />
+                            <input type="text" placeholder="Nome da despeza" onChange={(e)=>setExpense(e.target.value)}/>
+                            <input type="number" placeholder="Custo da despeza" onChange={(e)=>setExpenseValue(e.target.value)}/>
                         </div>
 
 

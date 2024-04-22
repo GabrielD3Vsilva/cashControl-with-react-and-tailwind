@@ -8,8 +8,8 @@ function Header ({cash}) {
 
         <section className="flex justify-center">
           <CashCard textDescription="verba disponivel" value={cash}/>
-          <CashCard textDescription="Verba comprometida" value="1000000 reais"/>
-          
+          <CashCard textDescription="Verba comprometida" value="1000000"/>
+
         </section>
       </header>
     </>

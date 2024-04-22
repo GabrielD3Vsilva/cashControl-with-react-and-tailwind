@@ -15,7 +15,7 @@ function ExpensesForm ({expensesList, setExpensesList}) {
     const addExpenseItem = ( ) => {
         const newExpense = {
             expenseName: expense,
-            expenseValue: expenseValue
+            expenseValueObj: expenseValue
         }
 
         setExpensesList([...expensesList, newExpense]);

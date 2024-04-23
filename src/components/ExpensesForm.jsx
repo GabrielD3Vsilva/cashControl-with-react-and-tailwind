@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ExpensesForm ({expensesList, setExpensesList}) {
+function ExpensesForm ({expensesList, setExpensesList, cash, setCash}) {
     const [expense, setExpense] = useState('');
     const [expenseValue, setExpenseValue] = useState('');
 
@@ -9,10 +9,12 @@ function ExpensesForm ({expensesList, setExpensesList}) {
         if(!expense || !expenseValue) return;
 
         addExpenseItem( );
+        setCash(Number(cash) - Number(expenseValue));
         
     }
 
     const addExpenseItem = ( ) => {
+
         const newExpense = {
             id: Math.random()*10000,
             expenseName: expense,
@@ -20,6 +22,8 @@ function ExpensesForm ({expensesList, setExpensesList}) {
         }
 
         setExpensesList([...expensesList, newExpense]);
+
+        
         
     }
 

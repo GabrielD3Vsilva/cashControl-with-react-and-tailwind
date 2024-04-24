@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ExpensesForm ({expensesList, setExpensesList, cash, setCash}) {
+function ExpensesForm ({expensesList, setExpensesList, cash, setCash, setCashExpense, cashExpense}) {
     const [expense, setExpense] = useState('');
     const [expenseValue, setExpenseValue] = useState('');
 
@@ -10,7 +10,9 @@ function ExpensesForm ({expensesList, setExpensesList, cash, setCash}) {
 
         addExpenseItem( );
         setCash(Number(cash) - Number(expenseValue));
+
         
+
     }
 
     const addExpenseItem = ( ) => {
@@ -21,10 +23,10 @@ function ExpensesForm ({expensesList, setExpensesList, cash, setCash}) {
             expenseValueObj: expenseValue
         }
 
-        setExpensesList([...expensesList, newExpense]);
+        setCashExpense(cashExpense + Number(newExpense.expenseValueObj));
+        console.log(cashExpense);
 
-        
-        
+        setExpensesList([...expensesList, newExpense]);
     }
 
     return (
@@ -43,7 +45,6 @@ function ExpensesForm ({expensesList, setExpensesList, cash, setCash}) {
                     </form>
                 </div>
                 
-
             </section>
         </>
     )

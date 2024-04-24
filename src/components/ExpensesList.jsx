@@ -1,19 +1,28 @@
-function ExpensesList ({setExpensesList, expensesList, setCash, cash}) {
+function ExpensesList ({setExpensesList, expensesList, setCash, cash, cashExpense, setCashExpense}) {
     const removeItem = (id) => {
         const newExpense = [...expensesList];
-
         const filterExpenses = newExpense.filter((expense)=>expense.id!==id ? expense : null)
-
         setExpensesList(filterExpenses);
-
         incrementCash(id);
+
+        decrementCashExpense (id);
 
     }
 
     const incrementCash = (id) => {
         for( let i = 0; i < expensesList.length; i++ ) {
             if(expensesList[i].id == id) {
-                setCash(Number((cash)) + Number(expensesList[i].expenseValueObj));
+                setCash( Number(cash) + Number(expensesList[i].expenseValueObj));
+            } else {
+                return;
+            }
+        }
+    }
+
+    const decrementCashExpense = (id) => {
+        for( let i = 0; i < expensesList.length; i++ ) {
+            if(expensesList[i].id == id) {
+                setCashExpense(cashExpense - Number(expensesList[i].expenseValueObj));
             } else {
                 return;
             }

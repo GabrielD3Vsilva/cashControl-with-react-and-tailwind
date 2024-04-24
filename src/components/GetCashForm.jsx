@@ -7,7 +7,6 @@ function GetCashForm ({setCash}) {
         setCash(cashRef.current.value);
     }
 
-
     return (
         <>
             <h2 className="text-center tedxt-lg md:text-xl my-5 font-black">Digite a verba a ser administrada abaixo: </h2>

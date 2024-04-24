@@ -1,6 +1,6 @@
 import CashCard from "./CashCard";
 
-function Header ({cash}) {
+function Header ({cash, cashExpense}) {
   return (
     <>
       <header className="bg-blue-950 w-screen">
@@ -8,8 +8,7 @@ function Header ({cash}) {
 
         <section className="flex justify-center">
           <CashCard textDescription="verba disponivel" value={cash}/>
-          <CashCard textDescription="Verba comprometida" value="1000000"/>
-
+          <CashCard textDescription="Verba comprometida" value={cashExpense}/>
         </section>
       </header>
     </>

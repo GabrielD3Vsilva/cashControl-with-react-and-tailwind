@@ -12,7 +12,7 @@ function App ( ) {
   return (
     <div className="bg-gray-200 h-screen">
       <Header cash={cash} cashExpense={cashExpense}/>
-      <GetCashForm setCash={setCash}/>
+      <GetCashForm setCash={setCash} cash={cash}/>
       <ExpensesForm expensesList={expensesList} setExpensesList={setExpensesList} setCash={setCash} cash={cash} cashExpense={cashExpense} setCashExpense={setCashExpense}/>
       <ExpensesList expensesList={expensesList} setExpensesList={setExpensesList} setCash={setCash} cash={cash}  setCashExpense={setCashExpense} cashExpense={cashExpense}/>
     </div>
